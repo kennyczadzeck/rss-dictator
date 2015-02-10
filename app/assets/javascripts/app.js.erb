@@ -1,0 +1,13 @@
+var app = angular.module("rssDictator", ["ngResource", "ngRoute"]);
+
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/', {
+        templateUrl: '<%= asset_path("templates/dashboard.html") %>',
+        controller: 'DashboardCtrl'
+      }).
+      otherwise({
+        redirectTo: '/'
+      });
+  }]);

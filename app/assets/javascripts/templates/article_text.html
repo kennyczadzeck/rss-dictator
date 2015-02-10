@@ -1,0 +1,38 @@
+<div class="col-md-12" >
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading clearfix">
+      <div class="btn-group pull-right" aria-label="...">
+        <a ng-click="listen($index)" class="btn btn-default">
+          <span class="glyphicon glyphicon-headphones"></span>
+          Listen
+        </a>
+      </div>
+      <h3 style="vertical-align:middle" class="panel-title clearfix">
+        {{ articles[reading].title }}
+      </h3>
+    </div>
+
+    <!-- Table -->
+    <table class="table">
+      <tr>
+        <th>From</th>
+        <td>{{ articles[reading].source.title }}</td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td>{{ articles[reading].date }}</td>
+      </tr>
+      <tr>
+        <th>Link</th>
+        <td><a ng-href="{{ articles[reading].link }}">{{ articles[reading].link }}</a></td>
+      </tr>
+    </table>
+
+    <div class="panel-body">
+      <p>{{ articles[reading].content }}</p>
+    </div>
+
+  </div>
+
+</div>

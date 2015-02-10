@@ -12,6 +12,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'angularjs-rails'
+gem 'bootstrap-sass', '~> 3.3.1.0'
+gem 'feedjira'
+#gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 
 group :development, :test do

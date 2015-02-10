@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Feed.create!([
+  {
+    url: "http://maryrosecook.com/blog/feed"
+  },
+  {
+    url: "http://feeds.feedburner.com/Freakonomics?format=xm..."
+  },
+  {
+    url: "https://github.com/blog/all.atom"
+  }
+])

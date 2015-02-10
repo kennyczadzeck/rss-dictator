@@ -1,0 +1,22 @@
+<h4>Now Playing</h4>
+<h5>{{ articles[listening].title }}</h5>
+<p>{{ articles[listening].source.title }}</p>
+
+<div class="btn-group" role="group" aria-label="..." style="margin-bottom:1em;">
+  <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-step-backward"></span>
+  </button>
+  <button type="button" class="btn btn-default">
+    slower
+  </button>
+  <button type="button" class="btn btn-default" ng-click="pausePlay()">
+    <span class="glyphicon glyphicon-pause" ng-show="!paused"></span>
+    <span class="glyphicon glyphicon-play" ng-show="paused"></span>
+  </button>
+  <button type="button" class="btn btn-default">
+    faster
+  </button>
+  <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-step-forward"></span>
+  </button>
+</div>

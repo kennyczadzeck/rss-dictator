@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+
+    <div ng-show="reading === null" class="col-md-12" >
+
+      <h3>Unread</h3>
+      <div class="panel panel-default" ng-repeat="article in articles">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h3 class="panel-title">{{ article.title }}</h3></div>
+        <div class="panel-body">
+          <p>{{ article.content.slice(0,255) + "..." }}</p>
+        </div>
+
+        <!-- Table -->
+        <table class="table">
+          <tr>
+            <th>From</th>
+            <td>{{ article.source.title }}</td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <td>{{ article.date }}</td>
+          </tr>
+          <tr>
+            <th>Link</th>
+            <td>
+            <a ng-href="{{ article.link }}">{{ article.link }}</a>
+            </td>
+          </tr>
+        </table>
+
+        <div class="btn-group btn-group-justified" style="padding:1em;" role="group" aria-label="...">
+          <a ng-click="read($index)" class="btn btn-default">
+            <span class="glyphicon glyphicon-eye-open"></span>
+            Read
+          </a>
+          <a ng-click="listen($index)" class="btn btn-default">
+            <span class="glyphicon glyphicon-headphones"></span>
+            Listen
+          </a>
+
+        </div>
+      </div>
+
+      <h3>Read</h3>
+    </div>
+
+    <article-text ng-show="reading !== null"></article-text>
+
+    <div class="text-center" ng-show="listening !== null" style="position:fixed; bottom:0; left:0; right:0; background-color:#EEE; border-top: 1px solid #DDD">
+      <article-listen></article-listen>
+    </div>
+
+  </div>
+</div>
+
