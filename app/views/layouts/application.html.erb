@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="rssDictator">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RssDictator</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
-<body ng-app="rssDictator">
+<body>
 
-<%= yield %>
+  <%= render 'layouts/header' %>
+  <%= yield %>
 
 </body>
 </html>

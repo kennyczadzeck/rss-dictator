@@ -1,0 +1,10 @@
+<div style="text-align:center">
+  <h1>Add RSS/Atom Feed</h1>
+  <br>
+  <form name="newFeedForm" ng-submit="newFeedForm.$valid && createFeed()" novalidate>
+    <div>
+      <input type="text" ng-model="feedUrl" required class="form-control" placeholder="Enter Url here..."><br>
+      <input type="submit" class="btn btn-primary">
+    </div>
+  </form>
+</div>

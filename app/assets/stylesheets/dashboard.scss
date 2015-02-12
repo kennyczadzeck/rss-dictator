@@ -1,0 +1,41 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.bMargin {
+  margin-bottom: 180px;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+#logo { 
+  float: left; 
+  margin-right: 10px; 
+  font-size: 2em; 
+  color: black; 
+  text-transform: uppercase; 
+  letter-spacing: -1px;
+  padding: 16px;
+  font-weight: bold; 
+  &:hover { 
+    color: #fff; 
+    text-decoration: none; 
+  } 
+} 
+
+.home {
+  text-align: center;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.loading-icon {
+  text-align: center;
+  margin: auto;
+  padding: 100px;
+}

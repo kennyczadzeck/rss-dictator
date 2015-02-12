@@ -5,3 +5,42 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+user1 = User.create({
+  name: "user1",
+  email: "user1@example.com",
+  password: "foobar",
+  password_confirmation: "foobar"
+})
+
+user2 = User.create({
+  name: "user2",
+  email: "user2@example.com",
+  password: "foobar",
+  password_confirmation: "foobar"
+})
+
+user1.feeds.create([
+  {
+    url: "http://maryrosecook.com/blog/feed"
+  },
+  {
+    url: "http://feeds.feedburner.com/Freakonomics?format=xm..."
+  }
+])
+
+# user1.articles.create([
+#   {
+#     url: "http://www.vice.com/read/people-are-still-using-ello-535"
+#   }
+# ])
+
+# user2.articles.create([
+#   {
+#     url: "http://www.vice.com/read/florida-man-is-a-love-letter-to-our-weirdest-and-best-state-012"
+#   }
+# ])
+
+user2.feeds.create({
+  url: "https://github.com/blog/all.atom"
+})
