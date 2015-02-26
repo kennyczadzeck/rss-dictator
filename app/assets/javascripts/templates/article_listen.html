@@ -1,0 +1,25 @@
+<h4>Now Playing</h4>
+<h5>{{ Speaker.listening.title }}</h5>
+<p>{{ listeningSourceTitle }}</p>
+
+<div class="btn-group" role="group" aria-label="..." style="margin-bottom:1em;">
+  <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-step-backward"></span>
+  </button>
+  <button type="button" class="btn btn-default" ng-click="Speaker.decreaseRate()">
+    slower
+  </button>
+  <button type="button" class="btn btn-default" ng-click="Speaker.stop()">
+    <span class="glyphicon glyphicon-stop"></span>
+  </button>
+  <button type="button" class="btn btn-default" ng-click="Speaker.pausePlay()">
+    <span class="glyphicon glyphicon-pause" ng-show="!Speaker.paused"></span>
+    <span class="glyphicon glyphicon-play" ng-show="Speaker.paused"></span>
+  </button>
+  <button type="button" class="btn btn-default" ng-click="Speaker.increaseRate()">
+    faster
+  </button>
+  <button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-step-forward"></span>
+  </button>
+</div>

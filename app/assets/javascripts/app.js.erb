@@ -1,0 +1,25 @@
+var app = angular.module("rssDictator", ["ngResource", "ngRoute"]);
+
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/', {
+        templateUrl: '<%= asset_path("templates/dashboard.html.erb") %>',
+        controller: 'DashboardCtrl'
+      }).
+      when("/feeds/manage", {
+        templateUrl: '<%= asset_path("templates/manage_feed.html.erb") %>',
+        controller: 'FeedCtrl'
+      }).
+      when("/articles/manage", {
+        templateUrl: '<%= asset_path("templates/manage_article.html.erb") %>',
+        controller: 'ArticleCtrl'
+      }).
+      when("/settings", {
+        templateUrl: '<%= asset_path("templates/voice_settings.html") %>',
+        controller: 'VoiceSettingsCtrl'
+      }).
+      otherwise({
+        redirectTo: '/'
+      });
+  }]);

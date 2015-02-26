@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="feed-dashboard">
+
+        <div class="panel panel-default add-article" > 
+
+          <div class="panel-heading">
+            <h3 style="vertical-align:middle" class="panel-title clearfix">
+              Add Article
+            </h3>
+          </div>
+
+          <div class="panel-body">
+          <form name="newArticleForm" ng-submit="newArticleForm.$valid && createArticle()" novalidate>
+            <div>
+              <input type="text" ng-model="articleUrl" required class="form-control" placeholder="Enter Url here..."><br>
+              <input type="submit" class="btn btn-primary">
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <div class="panel panel-default add-article" ng-show="articles.length"> 
+
+          <div class="panel-heading">
+            <h3 style="vertical-align:middle" class="panel-title clearfix">
+              Remove Article
+            </h3>
+          </div>
+
+          <table class="table">
+            <tr ng-repeat="article in articles">
+              <td style="vertical-align:middle;">
+                {{article.title}}
+              </td>
+              <td style="vertical-align:middle;"><button ng-click="deleteArticle(article.id)" class="btn btn-danger">Delete</button></td>
+            </tr>
+          </table>
+
+        </div>
+
+      </div> 
+
+
+    </div>
+  </div>
+</div>

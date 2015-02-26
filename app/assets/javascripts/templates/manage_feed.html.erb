@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="feed-dashboard">
+
+        <div class="panel panel-default add-article" > 
+
+          <div class="panel-heading">
+            <h3 style="vertical-align:middle" class="panel-title clearfix">
+              Add RSS/Atom Feed
+            </h3>
+          </div>
+
+          <div class="panel-body">
+            <form name="newFeedForm" ng-submit="newFeedForm.$valid && createFeed()" novalidate>
+              <div>
+                <input type="text" ng-model="feedUrl" required class="form-control" placeholder="Enter Url here..."><br>
+                <input type="submit" class="btn btn-primary">
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="panel panel-default add-article" ng-show="feeds.length"> 
+
+          <div class="panel-heading">
+            <h3 style="vertical-align:middle" class="panel-title clearfix">
+              Remove Feed
+            </h3>
+          </div>
+
+          <table class="table">
+            <tr ng-repeat="feed in feeds" style="vertical-align:middle;">
+              <td style="vertical-align:middle;">
+                {{feed.title}}
+              </td>
+              <td><button ng-click="deleteFeed(feed.id)" class="btn btn-danger">Delete</button></td>
+            </tr>
+          </table>
+
+        </div>
+
+      </div>  
+
+    </div>
+  </div>
+</div>

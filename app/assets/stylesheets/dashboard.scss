@@ -1,0 +1,237 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html {
+  background-color: #c4c586;
+
+  a {
+    color: black !important;
+    &:hover {
+      color: black !important;
+      background-color: transparent;
+    }
+    &:visited {
+      color: black !important;
+    }
+  }
+
+  /* Entire navbar space */
+  .navbar-default {
+    background-color: #fbf4d2;
+    padding: .5%;
+    margin: 0px;
+
+    .logo {
+      .image {
+        vertical-align: middle;
+        display: inline-block;
+        img {
+          max-height: 100px;
+        }
+      }
+      .text {
+        margin-left: 20px;
+        vertical-align: middle;
+        display: inline-block;
+        font-size: 1.2em;
+        .title {
+          font-family: 'Black Ops One', cursive;
+          font-size: 2.5em;
+        }
+        .tag {
+          font-size: 1.2em;
+          span {
+            font-size: .75em;
+          }
+        }
+      }
+    }
+
+    .sign-in-out {
+      padding-top: 75px;
+      li {
+        display: inline;
+        font-size: 1.5em;
+        margin: 0 10px 0 10px;
+      }
+    }
+
+    .user-menu {
+      padding-top: 70px;
+      li {
+        display: inline;
+        font-size: 1.1em;
+        margin: 0 10px 0 10px;
+      }
+    }
+
+    .dropdown-menu {
+      background-color: #fbf4d2;
+      li {
+        margin: 2px;
+        font-size: 1.1em;
+      }
+    }
+    .dropdown-toggle {
+      cursor: pointer;
+    }
+  }
+
+  .main-view {
+    background-color: #c4c586;
+
+    .articles-button {
+      width: 100%; 
+      background-color: #feff93; 
+      margin-bottom: 1em;
+      border: solid black;
+      font-weight: bold;
+    }
+
+    .feeds-button {
+      width: 100%; 
+      background-color: #fa7d79; 
+      margin-bottom: 1em;
+      border: solid black;
+      font-weight: bold;
+    }
+
+    .article-dashboard, .feed-dashboard {
+      max-width: 900px;
+      text-align: center;
+      margin: auto;
+      margin-top: 3%;
+      input {
+        max-width: 750px;
+        margin: auto;
+      }
+      tr {
+        &:hover {
+          background-color: #fbf4d2;
+        }
+      }
+      td {
+        font-size: 1.2em;
+      }
+    }
+
+    .voice-settings {
+      max-width: 750px;
+      text-align: center;
+      margin: auto;
+      margin-top: 3%;
+      input, select {
+        margin: auto;
+        max-width: 300px;
+        text-align: center;
+      }
+    }
+
+  }
+
+  .edit-user {
+    background-color: #c4c586;
+    margin: auto;
+    text-align: center;
+    form {
+      max-width: 750px;
+      margin: auto;
+    }
+  }
+
+  .bMargin {
+    margin-bottom: 180px;
+  }
+
+  /* flash messages */
+  .flash-save {
+    margin: 0px 150px;
+    padding: 16px 12px 10px 12px;
+    background-color: #98FB98;
+    border-radius: 5px;
+    color: #006400;
+  }
+
+}
+
+
+
+.home {
+  text-align: center;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.loading-icon {
+  text-align: center;
+  margin: auto;
+  padding: 100px;
+}
+
+
+@media (max-device-width: 600px) {
+  #dictator-header {
+    float: none !important;
+    border-top: none !important;
+
+    .user-menu {
+      padding: 1em !important;
+      width: 100% !important;
+      display: block !important;
+      li {
+        margin: .5em !important;
+        background-color: tan;
+
+        border-radius: 4px;
+        padding: .5em !important;
+        display: block !important;
+        width: 100% !important;
+      }
+    }
+  }
+
+  .image {
+    position: absolute !important;
+    top: 10px !important;
+    left: -5px !important;
+    height: 20px !important;
+    z-index: 0 !important;
+    display: none !important;
+  }
+
+  .main-view {
+    z-index: 20 !important;
+  }
+
+  .title {
+    font-size: 1.25em !important;
+    float: left !important; 
+  }
+
+  .text {
+  }
+
+  p.tag { 
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Provides bottom margin to main view when player is enabled */
+
+
+
+

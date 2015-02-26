@@ -1,0 +1,105 @@
+<div class="flash-save" ng-show="flashDisplay">
+  <p>{{flash.message}}</p>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+
+    <div ng-show="reading === null && articles.length" class="col-md-12">
+        <div class="articles-button btn btn-default btn-lg" ng-click="articlesShowing = !articlesShowing">
+          Your Saved Articles
+        </div>
+        <div ng-show="articlesShowing" class="panel panel-default" ng-repeat="article in articles">
+          <!-- Default panel contents -->
+          <div class="panel-heading"><h3 class="panel-title">{{ article.title }}</h3></div>
+
+          <!-- Table -->
+          <table class="table">
+            <tr>
+              <th>Date</th>
+              <td>{{ article.created_at }}</td>
+            </tr>
+            <tr>
+              <th>Link</th>
+              <td>
+              <a ng-href="{{ article.url }}">{{ article.url }}</a>
+              </td>
+            </tr>
+          </table>
+
+          <div class="btn-group btn-group-justified" style="padding:1em;" role="group" aria-label="...">
+            <a ng-click="read(article, 'your saved articles...')" class="btn btn-default">
+              <span class="glyphicon glyphicon-eye-open"></span>
+              Read
+            </a>
+            <a ng-click="listen(article, 'your saved articles...')" class="btn btn-default">
+              <span class="glyphicon glyphicon-headphones"></span>
+              Listen
+            </a>
+
+          </div>
+        </div>
+
+    </div>
+
+    <!-- ARTICLES / RSS FEEDS -->
+
+    <div ng-show="reading === null" class="col-md-12" ng-repeat="feed in feeds">
+
+      <div class="feeds-button btn btn-default btn-lg" ng-click="feed.showing = !feed.showing">
+        {{feed.title}}
+      </div>
+      <!-- <h3 ng-show="feed.showing">{{feed.description}}</h3> -->
+      <div ng-show="feed.showing" class="panel panel-default" ng-repeat="article in feed.entries">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h3 class="panel-title">{{ article.title }}</h3></div>
+        <div class="panel-body">
+          <p ng-bind-html="sanitize(article.summary)"></p>
+        </div>
+
+        <!-- Table -->
+        <table class="table">
+          <tr>
+            <th>By</th>
+            <td>{{ article.author }}</td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <td>{{ article.published }}</td>
+          </tr>
+          <tr>
+            <th>Link</th>
+            <td>
+            <a ng-href="{{ article.url }}">{{ article.url }}</a>
+            </td>
+          </tr>
+        </table>
+
+        <div class="btn-group btn-group-justified" style="padding:1em;" role="group" aria-label="...">
+          <a ng-click="read(article, feed.title)" class="btn btn-default">
+            <span class="glyphicon glyphicon-eye-open"></span>
+            Read
+          </a>
+          <a ng-click="listen(article, feed.title)" class="btn btn-default">
+            <span class="glyphicon glyphicon-headphones"></span>
+            Listen
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div id="loading-icon">
+
+    </div>
+
+    <article-text ng-show="reading"></article-text>
+
+    <div class="text-center" ng-show="Speaker.listening" style="position:fixed; bottom:0; left:0; right:0; background-color:#EEE; border-top: 1px solid #DDD">
+      <article-listen></article-listen>
+    </div>
+
+  </div>
+</div>
+
