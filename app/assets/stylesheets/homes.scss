@@ -2,3 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.jumbotron {
+  background-color: #c4c586;
+  margin: 0px;
+  border-radius: 0%;
+  h1 {
+    font-family: 'Black Ops One', cursive;
+  }
+}
+
+.sign-in, .new-user {
+  background-color: #c4c586;
+}
+
+.container.home {
+  margin: auto;
+  background-color: #c4c586;
+}
